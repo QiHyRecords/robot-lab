@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#061015" />
+  <title>Robot Lab · First-Person Engineering Sandbox</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="android-landscape.css" />
+  <link rel="stylesheet" href="guided-start.css" />
+</head>
+<body class="native-game">
+  <main id="game" class="game-shell">
+    <canvas id="viewport" aria-label="First-person 3D robotics laboratory"></canvas>
+    <div class="screen-vignette"></div>
+    <header class="hud-top">
+      <div class="brand"><span class="brand-mark">RL</span><div><strong>ROBOT LAB</strong><small>ENGINEERING SANDBOX</small></div></div>
+      <div class="location"><span class="location-dot"></span><span id="locationName">MAIN WORKSHOP</span><small id="locationCoords">x 0.0 · z 0.0</small></div>
+      <div class="hud-actions"><button data-panel="projects">SAVE</button><button data-panel="program">CODE</button><button data-panel="settings">SET</button><button data-panel="lab">MENU</button></div>
+    </header>
+    <div class="crosshair" id="crosshair"><span></span></div>
+    <div class="look-prompt" id="lookPrompt">Look at an object to interact</div>
+    <div class="held-badge" id="heldBadge"><span>HOLDING</span><strong>Empty hands</strong></div>
+    <div class="status-stack" id="statusStack"></div>
+    <div class="mission" id="mission"><span class="eyebrow">FIELD NOTE 01</span><strong>Build what you imagine.</strong><small>Walk to the storage wall and find a component.</small></div>
+    <div class="toast-zone" id="toastZone"></div>
+    <section class="context-card" id="contextCard"></section>
+    <section class="start-overlay" id="startOverlay" aria-label="Start Robot Lab">
+      <div class="start-card">
+        <span class="eyebrow">READY TO BUILD</span>
+        <strong>Start at the workbench</strong>
+        <small>Tap once to activate a guided starter kit. You can then use the joystick, swipe to look, or pick parts directly from the guide.</small>
+        <button id="startBuildBtn" class="start-build-btn">START BUILD</button>
+      </div>
+    </section>
+    <button id="interactBtn" class="interact-btn">INTERACT<span>E / TAP</span></button>
+    <button id="dropBtn" class="drop-btn">DROP<span>Q / HOLD</span></button>
+    <div class="joystick" id="joystick"><div class="joystick-ring"><div class="joystick-knob"></div></div><span>MOVE</span></div>
+    <div class="look-zone" id="lookZone"><span>LOOK</span></div>
+    <div class="mobile-hints"><span>LEFT: MOVE</span><span>RIGHT: LOOK</span></div>
+    <aside id="panel" class="panel-drawer" aria-live="polite"></aside>
+    <div class="desktop-help"><kbd>WASD</kbd> move <kbd>MOUSE</kbd> look <kbd>E</kbd> interact <kbd>Q</kbd> drop <kbd>SHIFT</kbd> sprint</div>
+  </main>
+  <input id="importFile" type="file" accept=".robotlab,.json" hidden />
+  <script src="game.bundle.js"></script>
+  <script src="starter-overlay.js"></script>
+</body>
+</html>
